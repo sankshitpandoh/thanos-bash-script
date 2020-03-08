@@ -24,4 +24,5 @@ arr=(~/myDir/*)
 for ((i=0; i<${#arr[@]}; i++)); do
     #do something to each element of array
     echo "${arr[$i]}"
+    echo "thanos initiating his snap, brance yourselves"
 done
